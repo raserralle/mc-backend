@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+print("Backend starting...")
 
 # Stores all Minecraft server results sent from your scanner
 servers = {}
