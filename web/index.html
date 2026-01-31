@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minecraft Servers Found</title>
+    <style>
+        body { background: #111; color: #0f0; font-family: monospace; padding: 20px; }
+        pre { font-size: 14px; }
+    </style>
+</head>
+<body>
+<h1>Minecraft Servers Found</h1>
+<pre id="out">Loading...</pre>
+
+<script>
+async function update() {
+    const res = await fetch("/results");
+    const data = await res.json();
+    document.getElementById("out").textContent =
+        JSON.stringify(data, null, 2);
+}
+setInterval(update, 2000);
+update();
+</script>
+</body>
+</html>
